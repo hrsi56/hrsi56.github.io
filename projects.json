@@ -1,0 +1,185 @@
+[
+  {
+    "id": "delu",
+    "title": "לחזות את היום הבא",
+    "name": "DE-LU · Electricity Price Forecasting",
+    "category": "data",
+    "categoryLabel": "מדעי הנתונים",
+    "visual": "forecast",
+    "featured": true,
+    "description": "חיזוי הסתברותי למחירי החשמל בגרמניה–לוקסמבורג. משאלת החיזוי, דרך השוואת מודלים ועד לדוח מחקר ודמו נגיש.",
+    "detail": "פיתוח מערך חיזוי ליום קדימה המשלב מודלים לינאריים, LightGBM ורשת נוירונים התפלגותית ב־NumPy. העבודה כוללת הערכת walk-forward, השוואה למודל LEAR ותיעוד ניסויים ב־MLflow. דמו ה־Hugging Face מציג את מודל LightGBM בגרסה הראשונה; תוצאות המחקר של המודלים המתקדמים מתועדות בנפרד בדוח.",
+    "tags": [
+      "Python",
+      "LightGBM",
+      "MLflow",
+      "Time Series"
+    ],
+    "url": "https://hrsi56.github.io/delu-day-ahead-forecast/",
+    "linkLabel": "לדוח ולתוצאות",
+    "repo": "https://github.com/hrsi56/delu-day-ahead-forecast",
+    "extra": "https://huggingface.co/spaces/Yarden-Viktor/delu-day-ahead-forecast",
+    "extraLabel": "לדמו האינטראקטיבי"
+  },
+  {
+    "id": "sem",
+    "title": "משאלת מחקר למודל",
+    "name": "SEM · Mediation Analysis",
+    "category": "research",
+    "categoryLabel": "מחקר וסטטיסטיקה",
+    "visual": "mediation",
+    "featured": true,
+    "description": "מודלים מבניים וניתוח תיווך במחקר על טראומה ובריאות הנפש. שותפות בפרסום בכתב העת World Psychiatry.",
+    "detail": "תרגום שאלות מחקר למודלים סטטיסטיים ויישום ניתוח תיווך באמצעות R, lavaan ו־bootstrap. המאמר שפורסם ב־World Psychiatry בשנת 2024 בחן קשרים בין שימוש בחומרים לפני אירוע טראומטי לבין תסמינים נפשיים בקרב ניצולי פסטיבל נובה.",
+    "tags": [
+      "R",
+      "lavaan",
+      "Bootstrap",
+      "SEM"
+    ],
+    "url": "https://doi.org/10.1002/wps.21254",
+    "linkLabel": "למאמר המדעי",
+    "repo": "https://github.com/hrsi56/SEM-Mediation-Analysis",
+    "extra": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11403159/",
+    "extraLabel": "למאמר המלא בגישה פתוחה"
+  },
+  {
+    "id": "codered",
+    "title": "CodeRed",
+    "name": "Historical Alert Atlas",
+    "category": "data",
+    "categoryLabel": "נתונים וממשקים",
+    "visual": "map",
+    "description": "להפוך רשומות התרעה למפה שאפשר לחקור. אטלס היסטורי עם סינון תאריכים והשוואה בין תקופות.",
+    "detail": "צינור נתונים ב־Python ו־SQLite, ממשק React ו־TypeScript ומפה מבוססת Leaflet. תהליכי עדכון ופרסום מופעלים באמצעות GitHub Actions. האתר מציג נתוני עבר לצורכי חקירה והבנה, ואינו מערכת התרעה בזמן אמת.",
+    "tags": [
+      "React",
+      "Python",
+      "SQLite",
+      "Leaflet"
+    ],
+    "url": "https://hrsi56.github.io/CodeRed/",
+    "linkLabel": "לחקירת המפה",
+    "repo": "https://github.com/hrsi56/CodeRed"
+  },
+  {
+    "id": "tovati",
+    "title": "טובתי",
+    "name": "Privacy-first Android App",
+    "category": "software",
+    "categoryLabel": "פיתוח מוצר",
+    "visual": "tovati",
+    "image": "assets/tovati-preview.png",
+    "imageAlt": "צילום מסך של גרף המעקב באפליקציית טובתי",
+    "description": "אפליקציית Android למעקב מחזור ופוריות. הנתונים נשמרים במכשיר, ללא הרשאת אינטרנט וללא פרסומות.",
+    "detail": "פיתוח אפליקציה ב־Kotlin עם מנוע סדרות עתיות דטרמיניסטי ובעל גרסאות. הדגש הוא על פרטיות, שקיפות החישוב ועבודה ללא חיבור. הפרויקט כולל בדיקות ו־backtesting המתחשב בסדר הזמנים כדי לצמצם דליפת מידע.",
+    "tags": [
+      "Kotlin",
+      "Android",
+      "Offline",
+      "Time Series"
+    ],
+    "url": "https://hrsi56.github.io/Tovati/",
+    "linkLabel": "להיכרות עם האפליקציה",
+    "repo": "https://github.com/hrsi56/Tovati",
+    "extra": "https://play.google.com/store/apps/details?id=com.yv.bbttracker",
+    "extraLabel": "ל־Google Play"
+  },
+  {
+    "id": "machshevet",
+    "title": "מחשבת",
+    "name": "Combinatorial Search Engine",
+    "category": "software",
+    "categoryLabel": "אלגוריתמים",
+    "visual": "peg",
+    "description": "משחק קטן, מרחב חיפוש עצום. פותר למחשבת שמחבר חיפוש גרפים, צמצום סימטריות וחישוב מקבילי.",
+    "detail": "מנוע פתרון Peg Solitaire המבוסס על bitboards, חיפוש Hybrid BFS והאצה באמצעות Numba. צמצום לפי סימטריות D4 מאפשר לייצג מצבים שקולים יחד. לפי תיעוד הפרויקט, מאגר הפתרונות מכיל כ־1.68 מיליון מצבים קנוניים מנצחים. לצד המנוע יש משחק שאפשר להתנסות בו.",
+    "tags": [
+      "Python",
+      "Numba",
+      "Graph Search",
+      "Bitboards"
+    ],
+    "url": "https://hrsi56.pythonanywhere.com/",
+    "linkLabel": "לשחק במחשבת",
+    "repo": "https://github.com/hrsi56/Machshevet"
+  },
+  {
+    "id": "eeg",
+    "title": "להקשיב לאות",
+    "name": "isi-TMS · EEG Signal Processing",
+    "category": "research",
+    "categoryLabel": "עיבוד אותות",
+    "visual": "signal",
+    "description": "חקירת אותות EEG והפרשי פאזה במעבדת המו״פ של BrainsWay באוניברסיטת בן־גוריון.",
+    "detail": "איחוד מקורות נתונים, אוטומציה של קדם־עיבוד ב־MATLAB וחקירת מאפיינים ספקטרליים והפרשי פאזה מעגליים. האתר כולל תוצרי מחקר היסטוריים שאושרו לפרסום ודמו סינתטי עצמאי. הדמו הציבורי אינו חושף נתוני משתתפים ואינו מייצג ולידציה קלינית.",
+    "tags": [
+      "MATLAB",
+      "EEG",
+      "Signal Processing"
+    ],
+    "url": "https://hrsi56.github.io/isi-TMS/",
+    "linkLabel": "לפרויקט המחקר",
+    "repo": "https://github.com/hrsi56/isi-TMS"
+  },
+  {
+    "id": "mdma",
+    "title": "מהמעבדה לנתונים",
+    "name": "Preclinical Neuroscience Research",
+    "category": "research",
+    "categoryLabel": "מדעי המוח",
+    "visual": "cells",
+    "description": "מחקר פרה־קליני במודל עקה: ניסויים, עיבוד תמונות וניתוח מדדים התנהגותיים ומולקולריים.",
+    "detail": "עבודת מחקר במדעי המוח שכללה תכנון וביצוע ניסויים ואוטומציה של ניתוח תמונות באמצעות Python ו־ImageJ. הפרויקט הציבורי מתעד צבירה וניתוח של מדדים היסטולוגיים ברמת החיה.",
+    "tags": [
+      "Python",
+      "ImageJ",
+      "Jupyter",
+      "Neuroscience"
+    ],
+    "url": "https://hrsi56.github.io/MDMA/",
+    "linkLabel": "לסקירת המחקר",
+    "repo": "https://github.com/hrsi56/MDMA"
+  },
+  {
+    "id": "algebra",
+    "title": "מרחב חי",
+    "name": "Interactive Linear Algebra Lab",
+    "category": "learning",
+    "categoryLabel": "למידה אינטראקטיבית",
+    "visual": "algebra",
+    "image": "assets/algebra-preview.png",
+    "imageAlt": "צילום מסך של סביבת הלמידה מרחב חי בעברית",
+    "description": "לראות את המתמטיקה זזה. סביבת לימוד בעברית לאלגברה לינארית ולמשוואות דיפרנציאליות, עם מעבדות אינטראקטיביות.",
+    "detail": "יוזמה והובלה של סביבת למידה מבוססת Next.js ו־TypeScript, הכוללת 8 פרקים, 47 שיעורים ו־8 מעבדות. הפיתוח נעשה בסיוע משמעותי של כלי AI, תוך הגדרת הבעיות, קבלת החלטות, שילוב ובדיקת התוצרים. ההמחשות משתמשות ב־Canvas וב־SVG.",
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "Canvas",
+      "Education"
+    ],
+    "url": "https://hrsi56.github.io/linear-algebra-lab/",
+    "linkLabel": "להיכנס למעבדה",
+    "repo": "https://github.com/hrsi56/linear-algebra-lab"
+  },
+  {
+    "id": "musagim",
+    "title": "מושגים",
+    "name": "Learn · Experiment · Understand",
+    "category": "learning",
+    "categoryLabel": "הנגשת ידע",
+    "visual": "musagim",
+    "image": "assets/musagim-preview.png",
+    "imageAlt": "תמונת הכותרת של ספר הלימוד האינטראקטיבי מושגים",
+    "description": "ספר לימוד אינטראקטיבי בעברית: 193 שיעורים במתמטיקה, סטטיסטיקה, דאטה ועיבוד אותות, עם Python בדפדפן.",
+    "detail": "חומרי לימוד בעברית שמחברים בין הסבר, קוד והתנסות. אפשר להריץ Python בדפדפן ולחקור מושגים בלי להקים סביבת פיתוח מקומית. הספר נבנה כדי להפוך נושאים כמותיים לנגישים דרך ניסוי ותרגול.",
+    "tags": [
+      "JavaScript",
+      "Python",
+      "Interactive Learning"
+    ],
+    "url": "https://hrsi56.github.io/musagim-interactive/",
+    "linkLabel": "לפתוח את הספר",
+    "repo": "https://github.com/hrsi56/musagim-interactive"
+  }
+]

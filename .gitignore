@@ -1,0 +1,14 @@
+.DS_Store
+Thumbs.db
+node_modules/
+tmp/
+.tmp/
+preview/
+screenshots/
+*.log
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.secrets/
