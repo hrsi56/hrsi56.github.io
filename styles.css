@@ -19,3 +19,57 @@ dialog{border:1px solid #cdd8c7;border-radius:18px;width:min(650px,calc(100% - 3
 .project-image-dejorno>img{object-fit:contain;object-position:center}.project-image-dejorno{background:#e5e9e1}
 
 .dialog-image{width:100%;height:auto;border:1px solid var(--line);border-radius:9px;margin-top:24px}
+
+/* Contact: clear choices, readable details and generous touch targets. */
+.contact-section{padding-block:64px 78px}
+.contact-section .contact-top{margin-bottom:25px}
+.contact-section .contact-asterisk{font-size:49px}
+.contact-layout{display:grid;grid-template-columns:1fr 1.08fr;align-items:center;gap:90px}
+.contact-intro h2{font-size:clamp(42px,4.4vw,62px);line-height:1.22;letter-spacing:-1.8px;margin:0 0 23px;font-weight:700}
+.contact-intro p{font-size:15px;line-height:1.95;color:#c2d0d0;max-width:410px}
+.contact-github{display:inline-flex;align-items:center;gap:18px;margin-top:34px;font-size:12px;color:#b9cecc;border-bottom:1px solid #547169;padding-bottom:7px}
+.contact-github:hover{color:var(--lime);border-color:var(--lime)}
+.contact-options{display:grid;gap:14px;min-width:0}
+.contact-card{display:flex;align-items:center;gap:17px;min-width:0;border:1px solid #58707b;background:#1c3543;border-radius:12px;padding:21px 23px;transition:background .2s,border-color .2s,transform .2s}
+.contact-card:hover{transform:translateY(-3px);background:#274553;border-color:#8eaaa8}
+.contact-card-copy{display:flex;flex-direction:column;gap:6px;min-width:0}
+.contact-card-copy strong{font-size:16px;line-height:1.4;font-weight:650;color:#f8f8f2}
+.contact-card-copy small{font-size:12px;line-height:1.5;color:#c2d0d0}
+.contact-icon{display:grid;place-items:center;flex-shrink:0;width:43px;height:43px;border-radius:10px;background:#ffffff0d;color:#c9ec91}
+.contact-icon svg{width:25px;height:25px;display:block}
+.contact-card-arrow{font-family:Arial,sans-serif;font-size:22px;line-height:1;margin-right:auto;color:#c9ec91;align-self:center}
+.contact-whatsapp{background:var(--lime);border-color:var(--lime);min-height:98px}
+.contact-whatsapp:hover{background:#d7f3ad;border-color:#d7f3ad}
+.contact-whatsapp .contact-card-copy strong{color:var(--ink);font-size:18px}
+.contact-whatsapp .contact-card-copy small{color:#314a37}
+.contact-whatsapp .contact-icon{background:#152b380c;color:#1f5e3c;width:47px;height:47px}
+.contact-whatsapp .contact-icon svg{width:29px;height:29px}
+.contact-whatsapp .contact-card-arrow{color:var(--ink)}
+.contact-secondary{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.contact-secondary .contact-card{display:grid;grid-template-columns:1fr auto;gap:17px 12px;align-items:start;padding:21px;min-height:157px}
+.contact-secondary .contact-icon{grid-column:1;grid-row:1;width:35px;height:35px;border-radius:8px}
+.contact-secondary .contact-icon svg{width:21px;height:21px}
+.contact-secondary .contact-card-copy{grid-column:1/-1;grid-row:2;gap:5px}
+.contact-secondary .contact-card-copy strong{font-size:13px}
+.contact-secondary .contact-card-arrow{grid-column:2;grid-row:1;align-self:center;font-size:19px}
+.contact-secondary .contact-card-copy small{font-size:12px}
+.contact-linkedin .contact-icon{background:#72b9ef17;color:#95c7ef}
+.contact-linkedin .contact-card-copy strong{font-family:Arial,sans-serif;font-size:17px;font-weight:600;text-align:right}
+.contact-phone-number{display:block;text-align:right;font-family:Arial,sans-serif;font-size:21px;font-weight:500;font-variant-numeric:tabular-nums;letter-spacing:.3px;line-height:1.45;color:#fff;white-space:nowrap}
+.contact-mail-bar{display:flex;align-items:center;gap:15px;border:1px solid #4a626c;background:#162f3c;border-radius:12px;padding:17px 19px}
+.contact-mail-icon{width:25px;height:25px;flex-shrink:0;color:#9fbcb7}
+.contact-mail-icon svg{width:25px;height:25px;display:block}
+.contact-mail-address{min-width:0;display:flex;flex-direction:column;gap:5px}
+.contact-mail-address>span{font-size:11px;color:#c2d0d0;line-height:1.4}
+.contact-mail-address>bdi{font-family:Arial,sans-serif;font-size:17px;font-weight:400;letter-spacing:0;line-height:1.4;color:#f8f8f2;white-space:nowrap}
+.contact-mail-address:hover>bdi{color:var(--lime)}
+.contact-mail-bar .copy-email{display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;min-width:44px;margin:0 auto 0 0;padding:10px 12px;border:1px solid #617f86;border-radius:8px;color:#d6e5df;background:transparent;font-size:11px;flex-shrink:0}
+.contact-mail-bar .copy-email>span{margin:0}
+.contact-mail-bar .copy-email svg{display:block;width:17px;height:17px}
+.contact-mail-bar .copy-email:hover{background:#ffffff0d;color:var(--lime);border-color:#a7c5b2}
+.contact-section a:focus-visible,.contact-section button:focus-visible{outline:3px solid #c9ec91;outline-offset:5px}
+.contact-whatsapp:focus-visible{outline:3px solid white!important;outline-offset:5px;box-shadow:0 0 0 8px #152b38}
+@media(max-width:1150px){.contact-layout{gap:50px}.contact-secondary .contact-card{padding:19px}.contact-phone-number{font-size:20px}.contact-mail-bar{padding:16px;gap:12px}.contact-mail-bar .copy-label{display:none}}
+@media(max-width:920px){.contact-layout{grid-template-columns:.9fr 1.1fr;gap:30px}.contact-intro h2{font-size:43px}.contact-intro p{font-size:13px}.contact-card{padding:18px;gap:13px}.contact-whatsapp .contact-card-copy strong{font-size:16px}.contact-secondary{gap:12px}.contact-secondary .contact-card{padding:16px}.contact-phone-number{font-size:18px;letter-spacing:0}.contact-secondary .contact-card-copy small{font-size:10px}.contact-mail-bar{padding:14px;gap:10px}.contact-mail-icon{display:none}.contact-mail-address>bdi{font-size:16px}}
+@media(max-width:740px){.contact-section{padding-block:45px 52px}.contact-section .contact-top{margin-bottom:23px}.contact-section .contact-asterisk{font-size:39px}.contact-layout{grid-template-columns:1fr;gap:28px}.contact-intro h2{font-size:44px;letter-spacing:-1.2px;margin:0 0 17px}.contact-intro p{font-size:14px;max-width:100%;line-height:1.9}.contact-intro p br{display:none}.contact-github{margin-top:20px;font-size:11px;padding-bottom:5px;gap:12px}.contact-options{gap:12px}.contact-card{border-radius:11px;padding:18px 20px}.contact-whatsapp{min-height:91px}.contact-whatsapp .contact-card-copy strong{font-size:17px}.contact-whatsapp .contact-card-copy small{font-size:11px}.contact-whatsapp .contact-icon{width:43px;height:43px}.contact-whatsapp .contact-icon svg{width:26px;height:26px}.contact-secondary .contact-card{padding:19px 16px;gap:14px 8px;min-height:150px}.contact-secondary .contact-card-copy strong{font-size:12px}.contact-linkedin .contact-card-copy strong{font-size:17px}.contact-secondary .contact-card-copy small{font-size:11px}.contact-phone-number{font-size:20px;letter-spacing:0}.contact-mail-bar{padding:16px;gap:12px}.contact-mail-icon{display:block}.contact-mail-address>bdi{font-size:17px}.contact-mail-bar .copy-label{display:none}.contact-mail-bar .copy-email{padding:10px}.contact-mail-address>span{font-size:10px}}
+@media(max-width:380px){.contact-intro h2{font-size:40px}.contact-secondary{grid-template-columns:1fr}.contact-secondary .contact-card{display:flex;align-items:center;gap:14px;min-height:87px;padding:17px 18px}.contact-secondary .contact-icon{width:38px;height:38px}.contact-secondary .contact-card-copy{gap:3px}.contact-phone-number{font-size:21px}.contact-secondary .contact-card-arrow{margin-right:auto}.contact-mail-icon{display:none}.contact-mail-bar{padding:15px;gap:10px}.contact-mail-address>bdi{font-size:17px}.contact-mail-bar .copy-email{margin-right:auto}.contact-whatsapp .contact-card-copy strong{font-size:16px}.contact-whatsapp .contact-card-copy small{font-size:10px}}
