@@ -44,6 +44,33 @@
     "extraLabel": "למאמר המלא בגישה פתוחה"
   },
   {
+    "id": "dejorno",
+    "title": "דג׳ורנו",
+    "name": "Dejorno · From an Idea to a Store Visit",
+    "category": "software",
+    "categoryLabel": "חוויה דיגיטלית לעסק",
+    "visual": "dejorno",
+    "wide": true,
+    "image": "assets/dejorno-catalog.jpg",
+    "imageAlt": "קטלוג הצבעים באתר דג׳ורנו, עם מוצרים וניווט בין קטגוריות",
+    "imageWidth": 1280,
+    "imageHeight": 720,
+    "detailImage": "assets/dejorno-list.jpg",
+    "detailImageAlt": "הדגמה של רשימת הכנה לביקור בדג׳ורנו, עם מוצר, כמויות ושאלה לצוות",
+    "detailImageWidth": 1280,
+    "detailImageHeight": 720,
+    "description": "אתר וכלי תכנון לעסק המשפחתי בתחום הבנייה והשיפוץ בבאר שבע. קטלוגים, מדריכי עשייה ומניפות גוונים מתחברים לרשימה אישית לקראת הביקור בחנות.",
+    "detail": "אפיון ופיתוח אתר וחוויית שימוש לעסק המשפחתי דג׳ורנו: חיפוש לפי צורך, קטלוגי ספקים, מדריכי עשייה ומניפות גוונים. אפשר לאסוף מוצרים, גוונים ושאלות לרשימה אישית, להגדיר כמויות והערות ולהשתמש בצ׳ק־ליסט, בהדפסה או בהורדת PDF לקראת הביקור בחנות. האתר מבוסס על תבנית WordPress ותוסף ייעודיים, ומחבר בין בחירה ותכנון ברשת לבין השירות והייעוץ בחנות.",
+    "tags": [
+      "WordPress",
+      "PHP",
+      "JavaScript",
+      "UX"
+    ],
+    "url": "https://dejorno.com/",
+    "linkLabel": "לבקר בדג׳ורנו"
+  },
+  {
     "id": "codered",
     "title": "CodeRed",
     "name": "Historical Alert Atlas",
@@ -180,6 +207,7 @@
     ],
     "url": "https://hrsi56.github.io/musagim-interactive/",
     "linkLabel": "לפתוח את הספר",
-    "repo": "https://github.com/hrsi56/musagim-interactive"
+    "repo": "https://github.com/hrsi56/musagim-interactive",
+    "wide": true
   }
 ]

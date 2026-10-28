@@ -65,11 +65,20 @@ document.querySelector('#project-grid').addEventListener('click', async (event) 
     const heading = element('h2', 'dialog-title', project.title);
     heading.id = 'dialog-title';
     content.append(heading, element('p', 'dialog-name', project.name), element('p', 'dialog-description', project.detail));
+    if (project.detailImage) {
+      const preview = element('img', 'dialog-image');
+      preview.src = project.detailImage;
+      preview.alt = project.detailImageAlt || '';
+      preview.width = project.detailImageWidth || 1280;
+      preview.height = project.detailImageHeight || 720;
+      preview.loading = 'lazy';
+      content.append(preview);
+    }
     const tags = element('div', 'project-tags dialog-tags');
     project.tags.forEach((tag) => tags.append(element('span', '', tag)));
     const links = element('div', 'dialog-links');
     links.append(externalLink(project.url, `${project.linkLabel} ↗`, 'button button-dark'));
-    links.append(externalLink(project.repo, 'הקוד ב־GitHub ↗', 'text-link'));
+    if (project.repo) links.append(externalLink(project.repo, 'הקוד ב־GitHub ↗', 'text-link'));
     if (project.extra) links.append(externalLink(project.extra, `${project.extraLabel} ↗`, 'text-link'));
     content.append(tags, links);
     lastTrigger = button;
