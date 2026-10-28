@@ -16,6 +16,6 @@ dialog{border:1px solid #cdd8c7;border-radius:18px;width:min(650px,calc(100% - 3
 
 @media(min-width:921px){.project-grid:not(.is-filtered) .project-card.wide{grid-column:span 6;display:grid;grid-template-columns:1fr 1fr}.project-grid:not(.is-filtered) .project-card.wide .project-visual{height:100%;min-height:310px;border:0;border-left:1px solid var(--line)}.project-grid:not(.is-filtered) .project-card.wide .project-body{padding:32px}.project-grid:not(.is-filtered) .project-card.wide .project-body h3{font-size:30px}}
 
-.project-image-dejorno>img{object-position:top}.project-image-dejorno{background:#f5f5f3}
+.project-image-dejorno>img{object-fit:contain;object-position:center}.project-image-dejorno{background:#e5e9e1}
 
 .dialog-image{width:100%;height:auto;border:1px solid var(--line);border-radius:9px;margin-top:24px}
