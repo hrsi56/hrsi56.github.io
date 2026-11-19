@@ -68,7 +68,9 @@
       "UX"
     ],
     "url": "https://dejorno.com/",
-    "linkLabel": "לבקר בדג׳ורנו"
+    "linkLabel": "לבקר בדג׳ורנו",
+    "imageSrcset": "assets/dejorno-home-640.webp 640w, assets/dejorno-home-960.webp 960w, assets/dejorno-home.webp 1280w",
+    "imageSizes": "(min-width: 1240px) 620px, (min-width: 700px) 50vw, 100vw"
   },
   {
     "id": "codered",
@@ -112,7 +114,9 @@
     "extra": "https://play.google.com/store/apps/details?id=com.yv.bbttracker",
     "extraLabel": "ל־Google Play",
     "imageWidth": 630,
-    "imageHeight": 1400
+    "imageHeight": 1400,
+    "imageSrcset": "assets/tovati-preview-320.webp 320w, assets/tovati-preview.webp 630w",
+    "imageSizes": "160px"
   },
   {
     "id": "machshevet",
@@ -191,7 +195,9 @@
     "linkLabel": "להיכנס למעבדה",
     "repo": "https://github.com/hrsi56/linear-algebra-lab",
     "imageWidth": 1200,
-    "imageHeight": 750
+    "imageHeight": 750,
+    "imageSrcset": "assets/algebra-preview-640.webp 640w, assets/algebra-preview-960.webp 960w, assets/algebra-preview.webp 1200w",
+    "imageSizes": "(min-width: 1000px) 400px, (min-width: 700px) 50vw, 100vw"
   },
   {
     "id": "musagim",
@@ -214,6 +220,8 @@
     "repo": "https://github.com/hrsi56/musagim-interactive",
     "wide": true,
     "imageWidth": 1200,
-    "imageHeight": 800
+    "imageHeight": 800,
+    "imageSrcset": "assets/musagim-preview-640.webp 640w, assets/musagim-preview-960.webp 960w, assets/musagim-preview.webp 1200w",
+    "imageSizes": "(min-width: 1240px) 620px, (min-width: 700px) 50vw, 100vw"
   }
 ]
