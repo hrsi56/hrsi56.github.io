@@ -51,11 +51,11 @@
     "categoryLabel": "חוויה דיגיטלית לעסק",
     "visual": "dejorno",
     "wide": true,
-    "image": "assets/dejorno-home.jpg",
+    "image": "assets/dejorno-home.webp",
     "imageAlt": "דף הבית של אתר דג׳ורנו, עם לוגו המותג וכותרת הפתיחה",
     "imageWidth": 1280,
     "imageHeight": 608,
-    "detailImage": "assets/dejorno-list.jpg",
+    "detailImage": "assets/dejorno-list.webp",
     "detailImageAlt": "הדגמה של רשימת הכנה לביקור בדג׳ורנו, עם מוצר, כמויות ושאלה לצוות",
     "detailImageWidth": 1280,
     "detailImageHeight": 720,
@@ -96,7 +96,7 @@
     "category": "software",
     "categoryLabel": "פיתוח מוצר",
     "visual": "tovati",
-    "image": "assets/tovati-preview.png",
+    "image": "assets/tovati-preview.webp",
     "imageAlt": "צילום מסך של גרף המעקב באפליקציית טובתי",
     "description": "אפליקציית Android למעקב מחזור ופוריות. הנתונים נשמרים במכשיר, ללא הרשאת אינטרנט וללא פרסומות.",
     "detail": "פיתוח אפליקציה ב־Kotlin עם מנוע סדרות עתיות דטרמיניסטי ובעל גרסאות. הדגש הוא על פרטיות, שקיפות החישוב ועבודה ללא חיבור. הפרויקט כולל בדיקות ו־backtesting המתחשב בסדר הזמנים כדי לצמצם דליפת מידע.",
@@ -110,7 +110,9 @@
     "linkLabel": "להיכרות עם האפליקציה",
     "repo": "https://github.com/hrsi56/Tovati",
     "extra": "https://play.google.com/store/apps/details?id=com.yv.bbttracker",
-    "extraLabel": "ל־Google Play"
+    "extraLabel": "ל־Google Play",
+    "imageWidth": 630,
+    "imageHeight": 1400
   },
   {
     "id": "machshevet",
@@ -175,7 +177,7 @@
     "category": "learning",
     "categoryLabel": "למידה אינטראקטיבית",
     "visual": "algebra",
-    "image": "assets/algebra-preview.png",
+    "image": "assets/algebra-preview.webp",
     "imageAlt": "צילום מסך של סביבת הלמידה מרחב חי בעברית",
     "description": "לראות את המתמטיקה זזה. סביבת לימוד בעברית לאלגברה לינארית ולמשוואות דיפרנציאליות, עם מעבדות אינטראקטיביות.",
     "detail": "יוזמה והובלה של סביבת למידה מבוססת Next.js ו־TypeScript, הכוללת 8 פרקים, 47 שיעורים ו־8 מעבדות. הפיתוח נעשה בסיוע משמעותי של כלי AI, תוך הגדרת הבעיות, קבלת החלטות, שילוב ובדיקת התוצרים. ההמחשות משתמשות ב־Canvas וב־SVG.",
@@ -187,7 +189,9 @@
     ],
     "url": "https://hrsi56.github.io/linear-algebra-lab/",
     "linkLabel": "להיכנס למעבדה",
-    "repo": "https://github.com/hrsi56/linear-algebra-lab"
+    "repo": "https://github.com/hrsi56/linear-algebra-lab",
+    "imageWidth": 1200,
+    "imageHeight": 750
   },
   {
     "id": "musagim",
@@ -196,7 +200,7 @@
     "category": "learning",
     "categoryLabel": "הנגשת ידע",
     "visual": "musagim",
-    "image": "assets/musagim-preview.png",
+    "image": "assets/musagim-preview.webp",
     "imageAlt": "תמונת הכותרת של ספר הלימוד האינטראקטיבי מושגים",
     "description": "ספר לימוד אינטראקטיבי בעברית: 193 שיעורים במתמטיקה, סטטיסטיקה, דאטה ועיבוד אותות, עם Python בדפדפן.",
     "detail": "חומרי לימוד בעברית שמחברים בין הסבר, קוד והתנסות. אפשר להריץ Python בדפדפן ולחקור מושגים בלי להקים סביבת פיתוח מקומית. הספר נבנה כדי להפוך נושאים כמותיים לנגישים דרך ניסוי ותרגול.",
@@ -208,6 +212,8 @@
     "url": "https://hrsi56.github.io/musagim-interactive/",
     "linkLabel": "לפתוח את הספר",
     "repo": "https://github.com/hrsi56/musagim-interactive",
-    "wide": true
+    "wide": true,
+    "imageWidth": 1200,
+    "imageHeight": 800
   }
 ]
