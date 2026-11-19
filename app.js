@@ -1,4 +1,20 @@
 const EMAIL = 'hrsi56@gmail.com';
+const NEW_TAB = 'נפתח בכרטיסייה חדשה';
+
+/* ---------- Screen readers: say when a link opens a new tab ---------- */
+const markNewTab = (link) => {
+  if (link.dataset.newTab) return;
+  link.dataset.newTab = 'true';
+  const label = link.getAttribute('aria-label');
+  if (label) link.setAttribute('aria-label', `${label} (${NEW_TAB})`);
+  else {
+    const note = document.createElement('span');
+    note.className = 'sr-only';
+    note.textContent = ` (${NEW_TAB})`;
+    link.append(note);
+  }
+};
+document.querySelectorAll('a[target="_blank"]').forEach(markNewTab);
 
 /* ---------- Header: mobile menu & scrolled state ---------- */
 const header = document.querySelector('.site-header');
@@ -15,15 +31,18 @@ document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && nav.classList.contains('open')) { setMenu(false); menu.focus(); }
 });
 document.addEventListener('click', (event) => { if (!event.target.closest('.site-header')) setMenu(false); });
-matchMedia('(min-width: 860px)').addEventListener('change', (event) => { if (event.matches) setMenu(false); });
-const markScrolled = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
-addEventListener('scroll', markScrolled, { passive: true });
-markScrolled();
+matchMedia('(min-width: 1000px)').addEventListener('change', (event) => { if (event.matches) setMenu(false); });
+// Observe a marker at the top of the page instead of reading scrollY, which forces a layout on load.
+const sentinel = document.querySelector('.scroll-sentinel');
+if (sentinel && 'IntersectionObserver' in window) {
+  new IntersectionObserver(([entry]) => header.classList.toggle('is-scrolled', !entry.isIntersecting)).observe(sentinel);
+}
 
 /* ---------- Project filters ---------- */
 const grid = document.querySelector('#project-grid');
 const cards = [...grid.querySelectorAll('.project-card')];
 const filterStatus = document.querySelector('#filter-status');
+let switchTimeout;
 document.querySelectorAll('.filter').forEach((button) => {
   button.addEventListener('click', () => {
     const filter = button.dataset.filter;
@@ -33,6 +52,9 @@ document.querySelectorAll('.filter').forEach((button) => {
       other.setAttribute('aria-pressed', String(active));
     });
     grid.classList.toggle('is-filtered', filter !== 'all');
+    grid.classList.add('is-switching');
+    clearTimeout(switchTimeout);
+    switchTimeout = setTimeout(() => grid.classList.remove('is-switching'), 500);
     let count = 0;
     cards.forEach((card) => {
       const show = filter === 'all' || card.dataset.category === filter;
@@ -48,7 +70,9 @@ const dialog = document.querySelector('#project-dialog');
 const dialogContent = document.querySelector('#dialog-content');
 const closeButton = dialog.querySelector('.dialog-close');
 const stepButtons = [...dialog.querySelectorAll('.dialog-step')];
+const projectHash = /^#project-([\w-]+)$/;
 let currentId;
+let pushedEntry = false;
 let projectsPromise;
 const getProjects = () => projectsPromise ||= fetch('projects.json').then((response) => {
   if (!response.ok) throw new Error('Project details unavailable');
@@ -66,9 +90,25 @@ const externalLink = (url, label, className) => {
   link.href = url;
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
+  markNewTab(link);
   return link;
 };
 const visibleIds = () => cards.filter((card) => !card.hidden).map((card) => card.id.replace(/^project-/, ''));
+const projectUrl = (id) => `${location.origin}${location.pathname}#project-${id}`;
+
+async function shareProject(project) {
+  const url = projectUrl(project.id);
+  try {
+    if (navigator.share && matchMedia('(pointer: coarse)').matches) {
+      await navigator.share({ title: `${project.title} | ירדן דג׳ורנו`, url });
+      return;
+    }
+    await navigator.clipboard.writeText(url);
+    toast('הקישור לפרויקט הועתק');
+  } catch (error) {
+    if (error?.name !== 'AbortError') toast(`הקישור לפרויקט: ${url}`);
+  }
+}
 
 function renderProject(project, projects) {
   const content = [];
@@ -102,6 +142,10 @@ function renderProject(project, projects) {
   links.append(externalLink(project.url, `${project.linkLabel} ↖`, 'button button-dark'));
   if (project.repo) links.append(externalLink(project.repo, 'הקוד ב־GitHub ↗', 'text-link'));
   if (project.extra) links.append(externalLink(project.extra, `${project.extraLabel} ↗`, 'text-link'));
+  const share = element('button', 'text-link dialog-share', 'שיתוף הפרויקט');
+  share.type = 'button';
+  share.addEventListener('click', () => shareProject(project));
+  links.append(share);
   content.push(tags, links);
   dialogContent.replaceChildren(...content);
 
@@ -113,8 +157,15 @@ function renderProject(project, projects) {
     button.hidden = !target;
     button.dataset.target = target?.id ?? '';
     button.querySelector('b').textContent = target?.title ?? '';
-    button.setAttribute('aria-label', target ? `${button.dataset.step === '1' ? 'לפרויקט הבא' : 'לפרויקט הקודם'}: ${target.title}` : '');
   });
+}
+
+// Each open project gets its own address, so it can be shared and the Back button closes the dialog.
+function rememberProject(id) {
+  const state = { project: id };
+  if (pushedEntry) history.replaceState(state, '', `#project-${id}`);
+  else if (projectHash.test(location.hash)) history.replaceState(state, '', `#project-${id}`);
+  else { history.pushState(state, '', `#project-${id}`); pushedEntry = true; }
 }
 
 async function openProject(id, trigger) {
@@ -125,6 +176,7 @@ async function openProject(id, trigger) {
     if (!project) throw new Error('Project not found');
     currentId = id;
     renderProject(project, projects);
+    rememberProject(id);
     dialog.scrollTop = 0;
     if (!dialog.open) {
       dialog.showModal();
@@ -162,10 +214,22 @@ dialog.addEventListener('click', (event) => {
   const outside = event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom;
   if (outside) dialog.close();
 });
-// Return focus to the card of the project that was open last, even after browsing with next/previous.
 dialog.addEventListener('close', () => {
+  // Leave the project address behind: step back if we added it, otherwise drop the hash.
+  if (pushedEntry) { pushedEntry = false; history.back(); }
+  else if (projectHash.test(location.hash)) history.replaceState(null, '', `${location.pathname}${location.search}`);
+  // Return focus to the card of the project that was open last, even after browsing with next/previous.
   document.querySelector(`.project-info[data-project="${CSS.escape(currentId ?? '')}"]`)?.focus();
 });
+const openFromHash = () => {
+  const id = location.hash.match(projectHash)?.[1];
+  if (id && document.querySelector(`#project-${CSS.escape(id)}`)) openProject(id);
+};
+addEventListener('popstate', () => {
+  if (dialog.open && !projectHash.test(location.hash)) { pushedEntry = false; dialog.close(); }
+  else if (!dialog.open) openFromHash();
+});
+openFromHash();
 
 /* ---------- Toast & copy e-mail ---------- */
 let toastTimeout;

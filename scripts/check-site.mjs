@@ -103,6 +103,9 @@ for (const file of await filesIn(root)) {
       for (const attribute of ['href', 'src', 'poster']) {
         if (attrs.has(attribute)) await checkReference(file, attrs.get(attribute));
       }
+      if (attrs.has('srcset')) {
+        for (const candidate of attrs.get('srcset').split(',')) await checkReference(file, candidate.trim().split(/\s+/)[0]);
+      }
       if (tag === 'img' && !attrs.has('alt')) report(file, 'Image is missing an alt attribute.');
       if (tag === 'a' && attrs.get('target') === '_blank') {
         const relations = new Set((attrs.get('rel') ?? '').split(/\s+/));
